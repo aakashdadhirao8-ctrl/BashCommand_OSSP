@@ -1,33 +1,8 @@
-# OS Lab - Practical 06
+Practical-6
+Aakash Dadhirao
+2520030337
+S-7
 
-## FIFO (Named Pipe)
+In this practical, we studied Inter-Process Communication (IPC) using FIFO (Named Pipes) and process communication using POSIX signals. FIFO allows two processes to communicate by creating a named pipe using the mkfifo() function. The FIFO can then be opened using open(), with read() used to receive data and write() used to send data between processes. The fork() function can be used to create a child process, while unlink() is used to remove the FIFO after communication is completed.
 
-FIFO is used for communication between two processes.
-
-### Functions used
-
-- `mkfifo()` - Creates a named pipe.
-- `open()` - Opens the FIFO for reading or writing.
-- `read()` - Reads data from the FIFO.
-- `write()` - Writes data to the FIFO.
-- `fork()` - Creates a child process.
-- `unlink()` - Deletes the FIFO.
-
-## POSIX Signals
-
-Signals are used to send notifications to a process.
-
-### Signals and functions
-
-- `SIGINT` - Interrupt signal (Ctrl+C).
-- `SIGTERM` - Used to terminate a process.
-- `SIGUSR1` - User-defined signal.
-- `signal()` - Used to handle a signal.
-- `kill()` - Sends a signal to a process using PID.
-- `Signal Handler` - Function which executes when a signal is received.
-
-## Files
-
-- `client.c`
-- `server.c`
-- `signal.c`
+We also studied POSIX signals, which are used to send notifications or control signals to processes. Signals such as SIGINT, SIGTERM, and SIGUSR1 were explored. The signal() function is used to define a signal handler, which is a function executed when a particular signal is received. The kill() function can be used to send a signal to another process using its process ID (PID). The practical was implemented using three C programs: client.c for the client-side FIFO communication, server.c for the server-side processing, and signal.c for demonstrating signal handling and communication between processes.
